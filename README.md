@@ -8,27 +8,27 @@
 
 
 # config.json参数说明
-**InterfaceIndex**
+## InterfaceIndex
 在PowerShell中输入命令`Get-NetAdapter`，找到对应网卡的`ifIndex`
 
-**IPType**
+## IPType
 有SLAAC（本地链接IPv6）、DHCP（本地链接IPv6）、TEMP（临时IPv6）、IPv4四种类型，前三种都是针对IPv6的，IPv6推荐使用TEMP，因为SLAAC有泄露物理地址的风险。
 
-**临时IP开启方式**
+### 临时IP开启方式
 ```
 开启临时IP：netsh interface ipv6 set privacy state=enable
 修改临时IP最大首选寿命（不然会每天一变）：netsh interface ipv6 set privacy maxpreferredlifetime=7d
 关闭临时IP：netsh interface ipv6 set privacy state=disable
 ```
 
-**Domain、SubDomain**
+## Domain、SubDomain
 - `Domain`：域名，例如`xxx.com`
 - `SubDomain`：子域名（主机名），例如`www`、`host`，如果项目使用根域名，则填`@`
 
-**SecretId、SecretKey**
+## SecretId、SecretKey
 腾讯云密钥，在控制台生成和查看
 
-**WebhookKey**
+## WebhookKey
 企业微信机器人的key，在群聊中点击机器人信息即可查看
 
 
