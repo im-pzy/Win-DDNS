@@ -1,0 +1,9 @@
+{
+	"InterfaceIndex": 12,
+	"IPType": "TEMP",
+	"Domain": "xxx.com",
+	"SubDomain": "@",
+	"SecretId": "xxx",
+	"SecretKey": "xxx",
+	"WebhookKey": "xxx"
+}
