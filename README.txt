@@ -5,6 +5,8 @@
 - `DDNS.xml`：任务计划文件
 - `update_DDNS.py`：云端通信程序，负责更新IP、推送消息
 
+
+
 # config.json参数说明
 *InterfaceIndex*
 在PowerShell中输入命令`Get-NetAdapter`，找到对应网卡的`ifIndex`
@@ -30,5 +32,9 @@
 企业微信机器人的key，在群聊中点击机器人信息即可查看
 
 
+
 # 导入任务计划
-任务计划改好用户名、路径
+将文件导入任务计划，导入时注意修改任务的用户名、脚本路径(DDNS.ps1)、工作路径
+
+# 安装python模块
+`pip install -r requirements.txt`
