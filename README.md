@@ -6,35 +6,24 @@
 - `update_DDNS.py`：云端通信程序，负责更新IP、推送消息
 
 
-
 # 1.config.json参数说明
-## ①InterfaceIndex
-在PowerShell中输入命令`Get-NetAdapter`，找到对应网卡的`ifIndex`
-
-## ②IPType
-有SLAAC（本地链接IPv6）、DHCP（本地链接IPv6）、TEMP（临时IPv6）、IPv4四种类型，前三种都是针对IPv6的，IPv6推荐使用TEMP，因为SLAAC有泄露物理地址的风险。
-
-### 临时IP开启方式
+- **InterfaceIndex**：在PowerShell中输入命令`Get-NetAdapter`，找到对应网卡的`ifIndex`
+- **IPType**:有SLAAC（本地链接IPv6）、DHCP（本地链接IPv6）、TEMP（临时IPv6）、IPv4四种类型，IPv6推荐使用TEMP，因为SLAAC有泄露物理地址的风险。
+> 临时IP开启方式
 ```
 开启临时IP：netsh interface ipv6 set privacy state=enable
 修改临时IP最大首选寿命（不然会每天一变）：netsh interface ipv6 set privacy maxpreferredlifetime=7d
 关闭临时IP：netsh interface ipv6 set privacy state=disable
 ```
-
-## ③Domain、SubDomain
-- `Domain`：域名，例如`xxx.com`
-- `SubDomain`：子域名（主机名），例如`www`、`host`，如果项目使用根域名，则填`@`
-
-## ④SecretId、SecretKey
-腾讯云密钥，在控制台生成和查看
-
-## ⑤WebhookKey
-企业微信机器人的key，在群聊中点击机器人信息即可查看
-
+- **`Domain`**：域名，例如`xxx.com`
+- **`SubDomain`**：子域名（主机名），例如`www`、`host`，如果项目使用根域名，则填`@`
+- **SecretId、SecretKey**:腾讯云密钥，在控制台生成和查看
+- **WebhookKey**:企业微信机器人的key，在群聊中点击机器人信息即可查看
 
 
 # 2.导入任务计划
 将文件导入任务计划，导入时注意修改任务的用户名、脚本路径(DDNS.ps1)、工作路径
+
 
 # 3.安装python模块
 `pip install -r requirements.txt`
